@@ -173,6 +173,6 @@ train_numpy/
 
 
 # Ignore py files
-*.main.ipynb
-*.Interpolate.ipynb
+/main.ipynb
+/Interpolate.ipynb
 
