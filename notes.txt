@@ -1,0 +1,82 @@
+To-do:
+1. Hi (Salute), Assalamualaikum (Salute + Handshake), Waalaikumssalam (Handshake) -- To code Assalamualaikum as Hi + Waalaikumssalam if statement
+    Dataset for Assalamualaikum split into Hi and Waalaikumssalam
+
+2. Train is Original Dataset
+3. Train_2 is the remove 8 worst performance
+4. train_3 is cleaner keypoints (current)
+
+'''
+2nd Attempt at Training using Train_2:
+- where classes that performed poorly in the first training are removed
+Classes Removed:
+1. bahasa_isyarat 13
+2. beli2 20
+3. pergi 83
+4. tolong2 107
+5. pukul 89
+6. main 58
+7. teksi 103
+8. sudah 98
+'''
+
+'''
+To fix:
+1. ambil, remove left hand data 
+2. anak, 34 /
+3. arah, 09, 10 /
+4. beli, 03, 05 (remove left hand) 
+5. beli2 /
+6. berapa, 23 27 both remove left hand
+7. bola, 01 / 
+8. datuk, 23, 24 (remove left hand)
+9. duit, 15 (remove left hand)
+10. esok, 14 (remove left hand)
+11. hari, 29, 32 /
+12. hospital, 12, 13, 28, 19 20 23 24 29 (remove left hand)
+13. ibu remove left hand data
+14. kafeteria remove left hand data
+15. kakak remove left hand data
+17. lelaki 37
+18. marah2 : 20
+19. masa: 12, 21, 26  need to test model remove if inaccurate
+20. nasim lemak: 16, 17
+21. pandai2
+22. pergi2: 01
+23. perlahan2: 01, 18, 20
+24. pinjam (havent)
+'''
+
+'''
+To Remove Hand Data
+left
+ambil: 01, 02, 03, 06, 20, 21, 24, 26
+beli: 05
+berapa: 23 27
+datuk: 24
+duit: 15
+esok: 14
+hospital: 20, 23, 24, 29
+ibu: 13, 14, 34, 37, 43
+kafeteria: 13, 17, 18, 22, 25, 26
+kakak: 36
+lelaki: 37
+makan: 19, 32
+marah: 10, 15, 21, 23
+mari: 10
+minum: 21
+nasi: 10
+nenek: 06
+panas2: 01, 04, 07, 09, 10, 20
+padai2: 17
+pen: 32, 36, 42
+perempuan: 41, 54, 55
+pergi: 04, 05, 12
+perlahan: 14, 17
+
+right
+hospital: 19
+panas: 19
+'''
+
+Workshop 3rd 6pm - 9pm n 7th 11am - 2pm Dec
