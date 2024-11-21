@@ -170,3 +170,9 @@ TRAIN_2/
 TRAIN_3/
 Train_test/
 train_numpy/
+
+
+# Ignore py files
+*.main.ipynb
+*.Interpolate.ipynb
+
