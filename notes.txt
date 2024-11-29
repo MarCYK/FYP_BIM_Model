@@ -40,11 +40,10 @@ To fix:
 17. lelaki 37
 18. marah2 : 20
 19. masa: 12, 21, 26  need to test model remove if inaccurate
-20. nasim lemak: 16, 17
-21. pandai2
-22. pergi2: 01
-23. perlahan2: 01, 18, 20
-24. pinjam (havent)
+20. nasi lemak: 16, 17
+21. pergi2: 01
+22. perlahan2: 01, 18, 20
+23. pinjam (havent)
 '''
 
 '''
@@ -80,3 +79,9 @@ panas: 19
 '''
 
 Workshop 3rd 6pm - 9pm n 7th 11am - 2pm Dec
+
+Try ensembling and bayesian approach
+
+Problem:
+1. hand movement too fast
+2. create ipynb to record hand, add stop, pause record
