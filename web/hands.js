@@ -79,7 +79,8 @@ new controls.ControlPanel(controlsElement, {
         new controls.Toggle({ title: 'Selfie Mode', field: 'selfieMode' }),
         new controls.SourcePicker({
             onFrame: async (input, size) => {
-                const aspect = size.height / size.width;
+                // const aspect = size.height / size.width;
+                const aspect = 1080 / 1920;
                 let width, height;
                 if (window.innerWidth > window.innerHeight) {
                     height = window.innerHeight;

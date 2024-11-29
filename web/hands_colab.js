@@ -19,15 +19,6 @@ const saveRecordingButton = document.getElementById('saveRecording');
 // Video options
 const options = { mimeType: 'video/mp4; codecs=avc1.42E01E,mp4a.40.2' };
 
-// Video constraints
-const constraints = {
-    video: {
-        width: { ideal: 1920 },
-        height: { ideal: 1080 },
-        frameRate: { ideal: 30 },
-    },
-};
-
 // MediaRecorder variables
 let mediaRecorder;
 let recordedChunks = [];
