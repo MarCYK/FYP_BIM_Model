@@ -106,7 +106,7 @@ new controls.ControlPanel(controlsElement, {
                 hiddenCanvasElement.width = width;
                 hiddenCanvasElement.height = height;
 
-                // hiddenCanvasCtx.drawImage(input, 0, 0, width, height);
+                hiddenCanvasCtx.drawImage(input, 0, 0, width, height);
                 await hands.send({ image: input });
             },
         }),
