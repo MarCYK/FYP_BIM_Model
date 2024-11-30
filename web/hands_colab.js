@@ -17,15 +17,15 @@ const saveRecordingButton = document.getElementById('saveRecording');
 // Video
 const hiddenVideo = document.createElement('video');
 const options = { mimeType: 'video/mp4; codecs=avc1.42E01E,mp4a.40.2' };
-const constraints = { audio: false, 
+const constraints = { 
+    audio: false, 
     video: { 
-        width: 1920, 
-        height: 1080, 
-        frameRate: { 
-            ideal: 30 
-        } 
+        width: { ideal: 1920 }, 
+        height: { ideal: 1080 }, 
+        frameRate: { ideal: 30 } 
     } 
 };
+
 
 const stream = await navigator.mediaDevices.getUserMedia(constraints);
 hiddenVideo.srcObject = stream;
