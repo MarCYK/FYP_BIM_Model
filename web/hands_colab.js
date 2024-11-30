@@ -7,29 +7,48 @@ const controls3d = window;
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const controlsElement = document.getElementsByClassName('control-panel')[0];
-const hiddenCanvasElement = document.createElement('canvas');
 const canvasCtx = canvasElement.getContext('2d');
-const hiddenCanvasCtx = hiddenCanvasElement.getContext('2d');
 
 // Buttons
 const startRecordingButton = document.getElementById('startRecording');
 const stopRecordingButton = document.getElementById('stopRecording');
 const saveRecordingButton = document.getElementById('saveRecording');
 
-// Video options
+// Video
+const hiddenVideo = document.createElement('video');
 const options = { mimeType: 'video/mp4; codecs=avc1.42E01E,mp4a.40.2' };
+const constraints = { audio: false, 
+    video: { 
+        width: 1920, 
+        height: 1080, 
+        frameRate: { 
+            ideal: 30 
+        } 
+    } 
+};
+
+const stream = await navigator.mediaDevices.getUserMedia(constraints);
+hiddenVideo.srcObject = stream;
+
+async function tryPlayVideo() {
+    try {
+        await hiddenVideo.play();
+    } catch (error) {
+        console.error('Failed to play video:', error);
+        setTimeout(() => tryPlayVideo(), 100);
+    }
+}
+
+tryPlayVideo();
 
 // MediaRecorder variables
-let mediaRecorder;
+const mediaRecorder = new MediaRecorder(stream, options);
 let recordedChunks = [];
 
 // Button functionality
 startRecordingButton.addEventListener('click', () => {
     startRecordingButton.style.display = 'none';
     stopRecordingButton.style.display = 'inline-block';
-
-    const stream = hiddenCanvasElement.captureStream(30); // Capture hidden canvas at 30 FPS
-    mediaRecorder = new MediaRecorder(stream, options);
 
     mediaRecorder.ondataavailable = (event) => {
         if (event.data.size > 0) {
@@ -40,7 +59,8 @@ startRecordingButton.addEventListener('click', () => {
     mediaRecorder.onstop = () => {
         saveRecordingButton.disabled = false; // Enable save button
     };
-
+    
+    recordedChunks = [];
     mediaRecorder.start();
 });
 
@@ -103,10 +123,6 @@ new controls.ControlPanel(controlsElement, {
                 canvasElement.width = width;
                 canvasElement.height = height;
 
-                hiddenCanvasElement.width = width;
-                hiddenCanvasElement.height = height;
-
-                hiddenCanvasCtx.drawImage(input, 0, 0, width, height);
                 await hands.send({ image: input });
             },
         }),

@@ -19,7 +19,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4/hands.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12/dist/umd/ffmpeg.min.js"></script>
   <style>
     .panel-block {
       padding: 0; /* Remove extra padding around the canvas */
@@ -43,7 +42,6 @@
 
 <body>
   <div class="container" style="margin-top: 20px;">
-    <video class="input_video" style="visibility: hidden; width: 0; height: 0;"></video>
     <div class="columns">
       <div class="column">
         <article class="panel is-info">
@@ -63,6 +61,8 @@
         <button id="saveRecording" class="button is-link" disabled>Save to Device</button>
       </div>
     </div>
+
+    <video class="input_video" style="visibility: hidden; width: 0; height: 0;"></video>
 
     <!-- legacy -->
     <div style="visibility: hidden;" class="control-panel"></div>
