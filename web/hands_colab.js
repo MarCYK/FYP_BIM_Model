@@ -80,6 +80,7 @@ saveRecordingButton.addEventListener('click', () => {
     const formattedTime = new Intl.DateTimeFormat('en-US', {
         hour: 'numeric',
         minute: 'numeric',
+        second: 'numeric',
         hour12: false,
     }).format(date);
 
