@@ -4,7 +4,10 @@ To-do:
 
 2. Train is Original Dataset
 3. Train_2 is the remove 8 worst performance
-4. train_3 is cleaner keypoints (current)
+4. Train_3 is keypoints with removed hand keypoints and non flipped
+5. Train_4 is gestures with almost same number of videos
+6. Train_5 is train_4 with flipped gestures
+
 
 '''
 2nd Attempt at Training using Train_2:
@@ -43,7 +46,13 @@ To fix:
 20. nasi lemak: 16, 17
 21. pergi2: 01
 22. perlahan2: 01, 18, 20
-23. pinjam (havent)
+23. pinjam
+24. saudara: 09
+25. saya: 27
+26. sekolah: 26, 27
+27. tidur: 14
+28. tolong: 26
+
 '''
 
 '''
@@ -72,10 +81,15 @@ pen: 32, 36, 42
 perempuan: 41, 54, 55
 pergi: 04, 05, 12
 perlahan: 14, 17
+pukul: 03, 16
+terima_kasih: 03, 11, 13, 14, 15, 28
+tidur: 05
+tolong: 07
 
 right
 hospital: 19
 panas: 19
+pukul: 04
 '''
 
 Workshop 3rd 6pm - 9pm n 7th 11am - 2pm Dec
